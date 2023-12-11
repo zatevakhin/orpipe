@@ -1,0 +1,14 @@
+[package]
+name = "orpipe"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arti-client = {version = "0.12.0", features = ["onion-service-client"]}
+tokio = { version = "1", features = ["full"] }
+structopt = "0.3"
+
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "target-feature=+crt-static"]
